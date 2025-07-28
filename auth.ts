@@ -10,7 +10,13 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   session: {
     strategy: "jwt",
   },
-  providers: [GitHub],
+  // providers: [GitHub],
+  providers: [
+    GitHub({
+      clientId: process.env.GITHUB_ID!,
+      clientSecret: process.env.GITHUB_SECRET!,
+    }),
+  ],
   adapter: PrismaAdapter(prisma),
   callbacks: {
     async jwt({ token, user }) {
