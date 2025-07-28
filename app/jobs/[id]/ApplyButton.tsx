@@ -14,7 +14,7 @@ export default function ApplyButton({ jobId }: { jobId: string }) {
   >("idle");
   const handleApply = async () => {
     if (!session) {
-      router.push("/auth/signin");
+      router.push("/auth/sign-in");
       return;
     }
 

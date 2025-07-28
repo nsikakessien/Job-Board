@@ -9,7 +9,7 @@ export async function POST(
   const session = await auth();
 
   if (!session?.user || !session.user.id) {
-    return NextResponse.redirect(new URL("/auth/singin", request.url));
+    return NextResponse.redirect(new URL("/auth/sign-in", request.url));
   }
 
   try {
